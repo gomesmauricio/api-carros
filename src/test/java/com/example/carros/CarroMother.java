@@ -5,6 +5,7 @@ import com.example.carros.domain.dto.CarroDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CarroMother {
 
@@ -34,6 +35,11 @@ public class CarroMother {
         dto.setNome("Descrição Tucker 1948");
 
         return dto;
+    }
+
+    public static Optional<Carro> getOptinalCar() {
+        Optional<Carro> carOptional = Optional.of(getCarro());
+        return carOptional;
     }
 
     public static List<Carro> copoletionGetCarros() {

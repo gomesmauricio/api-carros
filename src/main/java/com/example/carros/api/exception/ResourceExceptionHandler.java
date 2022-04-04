@@ -1,15 +1,14 @@
 package com.example.carros.api.exception;
 
-import java.time.LocalDateTime;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.example.carros.domain.service.exception.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.example.carros.domain.service.exception.ObjectNotFoundException;
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -20,5 +19,14 @@ public class ResourceExceptionHandler {
 				request.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
+
+	@ExceptionHandler(AccessDeniedException.class)
+	public ResponseEntity accessDenied(AccessDeniedException ex, HttpServletRequest request) {
+		StandardError error = new StandardError(LocalDateTime.now(), HttpStatus.FORBIDDEN.value(), ex.getMessage(),
+				request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+
+	}
+
 
 }

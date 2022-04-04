@@ -1,25 +1,18 @@
 package com.example.carros.api;
 
-import java.net.URI;
-import java.util.List;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.example.carros.api.assembler.CarroAssembler;
 import com.example.carros.domain.Carro;
 import com.example.carros.domain.dto.CarroDTO;
 import com.example.carros.domain.service.CarroService;
-
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -52,6 +45,7 @@ public class CarrosController {
 	}
 	
 	@PostMapping
+	@Secured({ "ROLE_ADMIN" })
 	public ResponseEntity post(@RequestBody Carro carro) {
 		try {
 			CarroDTO c = service.inserir(carro);

@@ -46,6 +46,10 @@ public class FirebaseStorageService {
         String fileName = uploadInput.getFileName();
         Blob blob = bucket.create(fileName, bytes, uploadInput.getMimeType());
 
+        //Assina URL válida por N dias
+//        URL signedUrl = blob.signUrl(2, TimeUnit.DAYS);
+
+        // Deixa URL pública
         blob.createAcl(Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER));
 
         return String.format("https://storage.googleapis.com/%s/%s", bucket.getName(), fileName);

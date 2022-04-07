@@ -1,7 +1,7 @@
 package com.example.carros.domain.service;
 
 import com.example.carros.api.assembler.CarroAssembler;
-import com.example.carros.domain.Carro;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
 import com.example.carros.domain.repository.CarroRepository;
 import com.example.carros.domain.service.exception.ObjectNotFoundException;

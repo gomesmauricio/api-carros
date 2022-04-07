@@ -1,6 +1,6 @@
 package com.example.carros;
 
-import com.example.carros.domain.Carro;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
 
 import java.util.ArrayList;

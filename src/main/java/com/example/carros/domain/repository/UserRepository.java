@@ -1,7 +1,7 @@
 package com.example.carros.domain.repository;
 
 
-import com.example.carros.domain.User;
+import com.example.carros.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

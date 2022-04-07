@@ -1,13 +1,12 @@
 package com.example.carros.api.assembler;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.example.carros.domain.Carro;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
 
 import lombok.AllArgsConstructor;

@@ -1,6 +1,6 @@
 package com.example.carros.domain.repository;
 
-import com.example.carros.domain.Carro;
+import com.example.carros.domain.model.Carro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

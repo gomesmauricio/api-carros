@@ -1,7 +1,7 @@
 package com.example.carros.api;
 
 import com.example.carros.api.assembler.CarroAssembler;
-import com.example.carros.domain.Carro;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
 import com.example.carros.domain.service.CarroService;
 import lombok.AllArgsConstructor;

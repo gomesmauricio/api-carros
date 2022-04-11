@@ -1,6 +1,8 @@
-package com.example.carros.api.upload;
+package com.example.carros.api.controller;
 
-import com.example.carros.domain.upload.FirebaseStorageService;
+import com.example.carros.api.upload.UploadInput;
+import com.example.carros.api.upload.UploadOutput;
+import com.example.carros.domain.service.upload.FirebaseStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

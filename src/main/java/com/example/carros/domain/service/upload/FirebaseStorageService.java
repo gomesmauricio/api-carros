@@ -1,4 +1,4 @@
-package com.example.carros.domain.upload;
+package com.example.carros.domain.service.upload;
 
 import com.example.carros.api.upload.UploadInput;
 import com.google.auth.oauth2.GoogleCredentials;

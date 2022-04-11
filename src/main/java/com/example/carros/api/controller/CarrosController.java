@@ -1,4 +1,4 @@
-package com.example.carros.api;
+package com.example.carros.api.controller;
 
 import com.example.carros.api.assembler.CarroAssembler;
 import com.example.carros.domain.model.Carro;

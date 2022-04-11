@@ -59,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .httpBasic()
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)//deliga acriação de cook de cessao
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)//desliga acriação de cook de cessao
                 .and()
                 .csrf().disable();
         */

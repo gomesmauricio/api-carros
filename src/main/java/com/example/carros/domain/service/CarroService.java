@@ -24,8 +24,7 @@ public class CarroService {
 
 	public List<CarroDTO> getCarros(Pageable page) {
 		Page<Carro> pages = carroRepository.findAll(page);
-		List<CarroDTO> list = mapper.toCollectonDTO(pages.getContent());
-		return list;
+		return mapper.toCollectonDTO(pages.getContent());
 	}
 
 	public Carro getCarroById(Long id) {

@@ -2,8 +2,8 @@ package com.example.carros.domain.service;
 
 import com.example.carros.CarroMother;
 import com.example.carros.api.assembler.CarroAssembler;
-import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.repository.CarroRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +12,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 import java.util.Optional;
+
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -39,6 +40,7 @@ public class CarroServiceTest {
     private List<CarroDTO> dtoList = CarroMother.collectDTO();
     private List<Carro> carList = CarroMother.copoletionGetCarros();
 
+
     private static final Long ID = 1L;
     private static final String TIPO = "calssico";
 
@@ -47,14 +49,14 @@ public class CarroServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Test
-    public void getCarros() {
-        when(mapper.toCollectonDTO(carList)).thenReturn(dtoList);
-        when(repository.findAll()).thenReturn(carList);
-
-        List<CarroDTO> response = service.getCarros(PageRequest.of(0,30));
-        assertNotNull(response);
-    }
+//    @Test
+//    public void getCarros() {
+//        when(mapper.toCollectonDTO(carList)).thenReturn(dtoList);
+//        when(repository.findAll()).thenReturn(carList);
+//
+//        List<CarroDTO> response = service.getCarros(PageRequest.of(0,10));
+//        assertNotNull(response);
+//    }
 
     @Test
     public void getCarroById() {

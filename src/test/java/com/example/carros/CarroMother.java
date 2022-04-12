@@ -1,7 +1,7 @@
 package com.example.carros;
 
-import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
+import com.example.carros.domain.model.Carro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,4 +53,5 @@ public class CarroMother {
         dtoList.add(getDTO());
         return dtoList;
     }
+
 }

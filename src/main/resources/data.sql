@@ -35,11 +35,11 @@ insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VA
 insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VALUES('Lexus LFA','Descrição Lexus LFA','http://www.livroandroid.com.br/livro/carros/luxo/Lexus_LFA.png','http://www.livroandroid.com.br/livro/carros/luxo/lexus.mp4','-23.564224','-46.653156','luxo');
 
 
-insert into user (nome, email, login, senha) VALUES ('Admin', 'admin@admin.com', 'admin', '$2a$10$edBox2ny8cl2sTXkD01HF.I9tAFutMv/q7/xY21wlhjKByxy4OeQW');
-insert into user (nome, email, login, senha) VALUES ('User', 'user@user.com', 'user', '$2a$10$DB.AKFNQtE95V.jnZxafNug.rR6NzNQYiIr6GpxhVUs3.VA4589WG');
+insert into usuario (nome, email, login, senha) VALUES ('Admin', 'admin@admin.com', 'admin', '$2a$10$edBox2ny8cl2sTXkD01HF.I9tAFutMv/q7/xY21wlhjKByxy4OeQW');
+insert into usuario (nome, email, login, senha) VALUES ('User', 'user@user.com', 'user', '$2a$10$DB.AKFNQtE95V.jnZxafNug.rR6NzNQYiIr6GpxhVUs3.VA4589WG');
 
 insert into role (nome) VALUES ('ROLE_ADMIN');
 insert into role (nome) VALUES ('ROLE_USER');
 
-insert into user_roles (user_id, role_id) VALUES (1, 1);
-insert into user_roles (user_id, role_id) VALUES (2, 2);
+insert into user_roles (usuario_id, role_id) VALUES (1, 1);
+insert into user_roles (usuario_id, role_id) VALUES (2, 2);

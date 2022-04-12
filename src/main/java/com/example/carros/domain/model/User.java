@@ -14,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "usuario")
 public class User implements UserDetails {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +29,7 @@ public class User implements UserDetails {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
-                            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+                            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
                             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private List<Role> roles;
 

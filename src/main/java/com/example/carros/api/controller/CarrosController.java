@@ -1,11 +1,12 @@
 package com.example.carros.api.controller;
 
 import com.example.carros.api.assembler.CarroAssembler;
-import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.dto.CarroDTO;
+import com.example.carros.domain.model.Carro;
 import com.example.carros.domain.service.CarroService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,9 @@ public class CarrosController {
 	public static final String ID = "/{id}";
 	
 	@GetMapping()
-	public ResponseEntity get() {
-		List<CarroDTO> carros = service.getCarros();
+	public ResponseEntity get(@RequestParam(value = "page", defaultValue = "0") Integer page,
+							  @RequestParam(value = "size", defaultValue = "10") Integer size) {
+		List<CarroDTO> carros = service.getCarros(PageRequest.of(page, size));
 		return ResponseEntity.ok(carros);
 	}
 	

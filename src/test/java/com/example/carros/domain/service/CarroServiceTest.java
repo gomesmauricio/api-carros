@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 import java.util.Optional;
@@ -51,7 +52,7 @@ public class CarroServiceTest {
         when(mapper.toCollectonDTO(carList)).thenReturn(dtoList);
         when(repository.findAll()).thenReturn(carList);
 
-        List<CarroDTO> response = service.getCarros();
+        List<CarroDTO> response = service.getCarros(PageRequest.of(0,30));
         assertNotNull(response);
     }
 

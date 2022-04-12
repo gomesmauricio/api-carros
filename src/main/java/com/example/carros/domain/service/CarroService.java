@@ -6,8 +6,11 @@ import com.example.carros.domain.dto.CarroDTO;
 import com.example.carros.domain.repository.CarroRepository;
 import com.example.carros.exception.ObjectNotFoundException;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +22,9 @@ public class CarroService {
 	private CarroAssembler mapper;
 	private CarroRepository carroRepository;
 
-	public List<CarroDTO> getCarros() {
-		List<CarroDTO> list = mapper.toCollectonDTO(carroRepository.findAll());
+	public List<CarroDTO> getCarros(Pageable page) {
+		Page<Carro> pages = carroRepository.findAll(page);
+		List<CarroDTO> list = mapper.toCollectonDTO(pages.getContent());
 		return list;
 	}
 
